@@ -14,10 +14,10 @@ export class ColorComponent {
   }
 
   loadColors() {
-    this.mainService.getColors().subscribe({
+    this.mainService.getAllProducts().subscribe({
       next: (products: any[]) => {
         this.colors = this.mainService.filterObjectsByKeyAndDistinct(products, 'color')
-        console.log("🚀 ~ AppComponent ~ getColors ~ getColors:", this.colors)
+        console.log("🚀 ~ AppComponent ~ getAllProducts ~ getAllProducts:", this.colors)
       },
       error: (error) => {
         console.log("error occurred", error)

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class MainService {
   constructor(private http: HttpClient) { }
-  getColors() {
+  getAllProducts() {
     return this.http.get<any>('../assets/db/index.json')
   }
   getDepthByColor() {

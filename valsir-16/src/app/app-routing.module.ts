@@ -1,3 +1,4 @@
+import { ProductSpecificationComponent } from './product-specification/product-specification.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ColorComponent } from './color/color.component';
@@ -9,14 +10,18 @@ const routes: Routes = [
     component: ColorComponent,
     title: 'Home page'
   },
+
   {
     path: ':color',
     component: DepthComponent,
-    title: 'Depth'
-
+    title: 'Depth',
   },
-];
+  {
+    path: ':color/:depth',
+    component: ProductSpecificationComponent,
+  },
 
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -1,0 +1,8 @@
+<form [formGroup]="form">
+  <div *ngFor="let label of checkboxLabels; let i = index">
+    <label>
+      <input type="checkbox" [formControlName]="'checkbox' + (i + 1)" (change)="onCheckboxChange()">
+      <pre>{{ label }}</pre>
+    </label>
+  </div>
+</form>

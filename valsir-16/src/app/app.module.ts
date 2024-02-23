@@ -9,6 +9,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { NavComponent } from './nav/nav.component';
+import { ProductSpecificationComponent } from './product-specification/product-specification.component';
+import { FilterComponent } from './filter/filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -19,10 +22,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppComponent,
     ColorComponent,
     DepthComponent,
-    NavComponent
+    NavComponent,
+    ProductSpecificationComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot(

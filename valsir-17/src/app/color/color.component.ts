@@ -17,10 +17,10 @@ export class ColorComponent {
   }
 
   loadColors() {
-    this.mainService.getColors().subscribe({
+    this.mainService.getAllProducts().subscribe({
       next: ({ colors }) => {
         this.colors = colors
-        console.log("🚀 ~ AppComponent ~ getColors ~ getColors:", colors)
+        console.log("🚀 ~ AppComponent ~ getAllProducts ~ getAllProducts:", colors)
       },
       error: (error) => {
         console.log("error occurred", error)
