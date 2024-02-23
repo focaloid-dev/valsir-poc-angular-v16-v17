@@ -1,0 +1,12 @@
+<div class="row">
+  @for (item of colors; track $index) {
+  <div class="column">
+    <a [routerLink]="['/', item.color, item.id]">
+      <div class="card">
+        <h3>{{ item.color }}</h3>
+        <p>{{ item.id }}</p>
+      </div>
+    </a>
+  </div>
+  }
+</div>

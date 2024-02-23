@@ -1,0 +1,3 @@
+<a *ngFor="let item of depthItems" [routerLink]="['/', item.color, item.id]">
+  <span class="label success">{{ item.depth }}</span> &nbsp;
+</a>

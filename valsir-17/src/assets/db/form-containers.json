@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Form Container",
+    "items": [
+      {
+        "label": "Rectangular",
+        "type": "Rectangular",
+        "items": ["EVOLUT"]
+      },
+      {
+        "label": "Triangular",
+        "type": "Triangular",
+        "items": ["SPACE"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,5 @@
+@for (item of depthItems; track $index) {
+<a [routerLink]="['/', item.color, item.id]">
+  <span class="label success">{{ item.value }}</span> &nbsp;
+</a>
+}

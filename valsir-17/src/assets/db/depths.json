@@ -1,0 +1,120 @@
+[
+  {
+    "id": "depth_id",
+    "color_id": 1,
+    "value": "90",
+    "unit": "mm",
+    "items": [
+      {
+        "id": "item_id",
+        "label": "",
+        "image_url": "",
+        "form_container": false,
+        "counter_plate": false,
+        "u_shaped_copper": false,
+        "items": [
+          {
+            "label": "TROPEA S",
+            "image_url": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "depth_id_1",
+    "color_id": 1,
+    "value": "120",
+    "unit": "mm",
+    "image_url": "",
+    "items": [
+      {
+        "id": "item_id",
+        "label": "",
+        "image_url": "",
+        "form_container": false,
+        "counter_plate": false,
+        "u_shaped_copper": false,
+        "items": [
+          {
+            "label": "WINNERS S",
+            "image_url": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "depth_id_2",
+    "color_id": 2,
+    "value": "180",
+    "unit": "mm",
+    "items": [
+      {
+        "id": "item_id",
+        "label": "",
+        "image_url": "",
+        "form_container": false,
+        "counter_plate": false,
+        "u_shaped_copper": false,
+        "items": [
+          {
+            "label": "CUBIK",
+            "image_url": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "depth_id",
+    "color_id": 2,
+    "value": "150",
+    "unit": "mm",
+    "items": [
+      {
+        "id": "item_id",
+        "label": "",
+        "image_url": "",
+        "form_container": true,
+        "counter_plate": false,
+        "u_shaped_copper": false,
+        "items": false
+      }
+    ]
+  },
+  {
+    "id": "depth_id",
+    "color_id": 2,
+    "value": "120",
+    "unit": "mm",
+    "items": [
+      {
+        "id": "item_id",
+        "label": "",
+        "image_url": "",
+        "form_container": false,
+        "is_u_shaped_copper": false,
+        "counter_plate": true,
+        "items": false
+      }
+    ]
+  },
+  {
+    "id": "depth_id",
+    "color_id": 2,
+    "value": "80",
+    "unit": "mm",
+    "items": [
+      {
+        "id": "item_id",
+        "label": "",
+        "image_url": "",
+        "form_container": false,
+        "counter_plate": false,
+        "u_shaped_copper": true,
+        "items": false
+      }
+    ]
+  }
+]

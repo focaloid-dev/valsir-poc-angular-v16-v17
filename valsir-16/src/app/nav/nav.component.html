@@ -1,0 +1,13 @@
+<div class="header">
+  <a href="#default" class="logo">Valsir</a>
+  <div class="header-right">
+    <a class="active" href="#home">{{ "home" | translate }}</a>
+    <a href="#contact">{{ "contact" | translate }}</a>
+    <a href="#about">{{ "about" | translate }}</a>
+    <select class="form-select" (change)="ChangeLang($event)" name="" id="">
+      <option [selected]="lang === 'en'" value="en">English</option>
+      <option [selected]="lang === 'fr'" value="fr">French</option>
+      <option [selected]="lang === 'es'" value="es">Spanish</option>
+    </select>
+  </div>
+</div>

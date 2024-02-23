@@ -1,0 +1,14 @@
+{
+  "colors": [
+    {
+      "id": 1,
+      "color": "Black",
+      "image_url": ""
+    },
+    {
+      "id": 2,
+      "color": "White",
+      "image_url": ""
+    }
+  ]
+}

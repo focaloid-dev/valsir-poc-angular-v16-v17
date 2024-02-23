@@ -1,0 +1,23 @@
+[
+  {
+    "label": "U-Shaped Copper Tube",
+    "u_shaped": true,
+    "items": ["MEDUSA"]
+  },
+  {
+    "label": "Non U-Shaped Copper Tube",
+    "u_shaped": false,
+    "items": [
+      {
+        "label": "Central Faucet",
+        "is_central_faucet": true,
+        "items": ["Rios"]
+      },
+      {
+        "label": "Non Central Faucet",
+        "is_central_faucet": false,
+        "items": ["TROPEA 2"]
+      }
+    ]
+  }
+]

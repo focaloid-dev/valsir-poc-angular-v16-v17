@@ -1,0 +1,28 @@
+[
+  {
+    "label": "Counter Plate",
+    "items": [
+      {
+        "is_angel": true,
+        "label": "Non Angel",
+        "items": ["WINNER 2"]
+      },
+      {
+        "is_angel": false,
+        "label": "Angel",
+        "items": [
+          {
+            "is_support_drain": true,
+            "label": "Support Drain",
+            "items": ["Angel -1994-2014 (MOD,A)"]
+          },
+          {
+            "is_support_drain": true,
+            "label": "Non Support Drain",
+            "items": ["Angel -1994-2014 (MOD,B)"]
+          }
+        ]
+      }
+    ]
+  }
+]
