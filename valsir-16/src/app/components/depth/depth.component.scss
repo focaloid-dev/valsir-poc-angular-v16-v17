@@ -1,0 +1,34 @@
+/* Add basic padding and margin */
+.row {
+  display: flex;
+  justify-content: center;
+  padding: 20px; /* Add padding to the row */
+}
+
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px; /* Add negative margin to counteract padding on child elements */
+}
+
+.depth-link {
+  text-decoration: none;
+  margin-right: 10px; /* Add margin between depth links */
+}
+
+.label {
+  padding: 5px 10px;
+  margin-bottom: 10px; /* Add margin below each label */
+}
+
+/* Style the label inside the depth link */
+.depth-link .label {
+  background-color: #28a745;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Style the label on hover */
+.depth-link .label:hover {
+  background-color: #218838;
+}

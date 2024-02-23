@@ -1,19 +1,25 @@
+/* Style the footer */
 .footer {
   background-color: #333;
-  color: #fff;
   padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Style the container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Style the row */
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+/* Style the column */
+.col {
   text-align: center;
-}
-
-.footer p {
-  margin: 0;
-}
-
-.footer a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
 }

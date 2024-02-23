@@ -1,36 +1,40 @@
-
-/* Float four columns side by side */
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
-
-/* Remove extra left and right margins, due to padding */
+/* Style the row */
 .row {
-  margin: 0 -5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 -15px; /* Add negative margin to counteract padding on columns */
 }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+/* Style the column */
+.column {
+  flex: 1;
+  padding: 0 15px;
+  max-width: 25%;
 }
 
-/* Responsive columns */
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
+/* Style the card link */
+.card-link {
+  text-decoration: none;
 }
 
-/* Style the counter cards */
+/* Style the card */
 .card {
+  background-color: #f4f4f4;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 16px;
+  margin: 20px;
+  padding: 20px;
   text-align: center;
-  background-color: #f1f1f1;
+}
+
+/* Style the card heading */
+.card h3 {
+  color: #333;
+  margin-top: 0;
+}
+
+/* Style the card paragraph */
+.card p {
+  color: #666;
+  margin-bottom: 0;
 }

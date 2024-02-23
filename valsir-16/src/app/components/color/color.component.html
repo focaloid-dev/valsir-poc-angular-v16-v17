@@ -1,6 +1,6 @@
 <div class="row">
   <div *ngFor="let item of colors" class="column">
-    <a [routerLink]="['/', item.color]">
+    <a [routerLink]="['/', item.color]" class="card-link">
       <div class="card">
         <h3>{{ item.color }}</h3>
         <p>{{ item.id }}</p>

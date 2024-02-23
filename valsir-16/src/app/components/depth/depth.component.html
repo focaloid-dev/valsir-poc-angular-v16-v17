@@ -1,3 +1,7 @@
-<a *ngFor="let item of depthItems" [routerLink]="[item.depth]">
-  <span class="label success">{{ item.depth }}</span> &nbsp;
-</a>
+<div class="row">
+  <div class="column">
+    <a *ngFor="let item of depthItems" [routerLink]="[item.depth]" class="depth-link">
+      <span class="label success">{{ item.depth }}</span> &nbsp;
+    </a>
+  </div>
+</div>
