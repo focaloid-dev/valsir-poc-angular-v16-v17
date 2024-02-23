@@ -1,8 +1,9 @@
-import { ProductSpecificationComponent } from './product-specification/product-specification.component';
+import { ProductSpecificationComponent } from './components/product-specification/product-specification.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ColorComponent } from './color/color.component';
-import { DepthComponent } from './depth/depth.component';
+import { ColorComponent } from './components/color/color.component';
+import { DepthComponent } from './components/depth/depth.component';
+
 
 const routes: Routes = [
   {
@@ -10,7 +11,6 @@ const routes: Routes = [
     component: ColorComponent,
     title: 'Home page'
   },
-
   {
     path: ':color',
     component: DepthComponent,

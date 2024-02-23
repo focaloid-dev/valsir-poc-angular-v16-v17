@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/internal/operators/distinctUntilChanged';
-import { MainService } from '../main.service';
+import { MainService } from '../../core/services/main.service';
 
 @Component({
   selector: 'app-product-specification',

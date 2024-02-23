@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, distinctUntilChanged } from 'rxjs';
-import { MainService } from '../main.service';
+import { MainService } from '../../core/services/main.service';
 
 @Component({
   selector: 'app-depth',
