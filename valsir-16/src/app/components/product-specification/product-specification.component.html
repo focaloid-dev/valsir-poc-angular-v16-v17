@@ -1,18 +1,12 @@
 <!-- <app-filter *ngIf="items.length" [checkboxLabels]="items" (checkboxValues)="handleCheckboxValues($event)"></app-filter> -->
 <br />
-<div *ngFor="let item of items">
-  <div class="card">
-    <img
-      src="https://www.w3schools.com/howto/img_avatar.png"
-      alt="Avatar"
-      style="width: 30%"
-    />
-    <div class="container">
-      <h4>
-        <b>{{ item.product_name }}</b>
-      </h4>
-      <p>Architect & Engineer</p>
+<div class="row">
+  <div *ngFor="let item of items" class="column">
+    <div class="card">
+      <img src="https://www.valsir.it/images/varie-demo/selezione-prodotti/risciacquo.png" alt="Avatar" />
+      <div class="container">
+        <h4><b>{{ item.product_name }}</b></h4>
+      </div>
     </div>
   </div>
-  <br />
 </div>

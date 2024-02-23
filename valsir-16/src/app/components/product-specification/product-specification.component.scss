@@ -1,13 +1,33 @@
+/* Style the row */
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Wrap items to the next line when they don't fit */
+  justify-content: center; /* Center items horizontally */
+  margin: 0 -15px; /* Add negative margin to counteract padding on columns */
+}
+
+/* Style the column */
+.column {
+  flex: 1; /* Equal width for each column */
+  padding: 0 15px; /* Add padding to separate columns */
+  max-width: 25%; /* Maximum width for large screens */
+}
+
+/* Style the card */
 .card {
+  background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 20%;
+  margin: 20px;
+  text-align: center;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+/* Style the image */
+.card img {
+  width: 100%;
+  height: auto;
 }
 
+/* Style the container inside the card */
 .container {
-  padding: 2px 16px;
+  padding: 10px;
 }
