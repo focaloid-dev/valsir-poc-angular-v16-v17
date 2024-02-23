@@ -1,0 +1,40 @@
+<div class="secondary-header">
+  <div class="container">
+    <div class="filter">
+      <label for="color-filter">Type:</label>
+      <select id="color-filter" [(ngModel)]="selectedType">
+        <option value="">All Types</option>
+        <option value="formContainer">Form Container</option>
+        <option value="counterPlate">Counter Plate</option>
+        <option value="uShapedCopperTube">U-Shaped Copper Tube</option>
+      </select>
+
+      <label for="size-filter" *ngIf="selectedType === 'counterPlate'"
+        >Size:</label
+      >
+      <select
+        id="size-filter"
+        *ngIf="selectedType === 'counterPlate'"
+        [(ngModel)]="selectedSize"
+      >
+        <option value="">Angel</option>
+        <option value="angel">Non Angel</option>
+      </select>
+
+      <label for="size-filter" *ngIf="selectedType === 'counterPlate'"
+      >Size:</label
+    >
+    <select
+      id="size-filter"
+      *ngIf="selectedType === 'formContainer'"
+      [(ngModel)]="selectedSize"
+    >
+      <option value="">Rectangular</option>
+      <option value="angel">Triangular</option>
+
+    </select>
+
+      <button class="reset-btn">Reset</button>
+    </div>
+  </div>
+</div>
