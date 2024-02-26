@@ -5,7 +5,11 @@
     <a href="#contact">{{ "contact" | translate }}</a>
     <a href="#about">{{ "about" | translate }}</a>
     <div class="select-container">
-      <select class="form-select" (change)="ChangeLang($event)" name="langSelect">
+      <select
+        class="form-select"
+        (change)="ChangeLang($event)"
+        name="langSelect"
+      >
         <option [selected]="lang === 'en'" value="en">English</option>
         <option [selected]="lang === 'fr'" value="fr">French</option>
         <option [selected]="lang === 'es'" value="es">Spanish</option>
@@ -14,3 +18,5 @@
     </div>
   </div>
 </div>
+
+<app-breadcrumb> </app-breadcrumb>

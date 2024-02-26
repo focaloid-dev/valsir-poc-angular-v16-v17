@@ -1,37 +1,32 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, distinctUntilChanged } from 'rxjs';
-import { MainService } from '../../core/services/main.service';
+import { MainService } from 'src/app/core/services/main.service';
 import { BreadcrumbItem } from 'src/app/shared/models/bread-crumb.model';
 import { BreadcrumbService } from 'src/app/shared/services/breadcrumb.service';
 
 @Component({
-  selector: 'app-depth',
-  templateUrl: './depth.component.html',
-  styleUrls: ['./depth.component.scss']
+  selector: 'app-plate',
+  templateUrl: './plate.component.html',
+  styleUrls: ['./plate.component.scss']
 })
-export class DepthComponent {
-  depthItems: any[] = [];
+export class PlateComponent {
+  plates: any[] = [];
   constructor(
     private route: ActivatedRoute,
     private mainService: MainService,
     private breadcrumbService: BreadcrumbService,
-    private router: Router
+    private router: Router,
   ) { }
 
-  ngOnInit() {
-    this.route.params.pipe(
-      map(params => params['color']),
-      distinctUntilChanged(),
-    ).subscribe(color => this.loadDepths(color));
+  ngOnInit(): void {
+    this.loadColors();
   }
-  loadDepths(color: string) {
-    this.mainService.getDepthByColor().subscribe({
+
+  loadColors() {
+    this.mainService.getAllProducts().subscribe({
       next: (products: any[]) => {
-        const allDepthItems = this.mainService.filterObjectsByKey(products, 'depth');
-        const depthWithQueryColor = allDepthItems.filter((depth) => depth.color === color)
-        this.depthItems = this.mainService.filterObjectsByKeyAndDistinct(depthWithQueryColor, 'depth')
-        console.log("🚀 ~ depths ~ depths ~ depths:", allDepthItems)
+        this.plates = this.mainService.filterObjectsByKeyAndDistinct(products, 'plate_name')
+        console.log("🚀 ~ AppComponent ~ getAllProducts ~ getAllProducts:", this.plates)
       },
       error: (error) => {
         console.log("error occurred", error)

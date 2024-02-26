@@ -1,6 +1,10 @@
 <div class="row">
   <div class="column">
-    <a *ngFor="let item of depthItems" [routerLink]="[item.depth]" class="depth-link">
+    <a
+      *ngFor="let item of depthItems"
+      (click)="navigateTo('/' + item.plate_name + '/' + item.color, item.depth)"
+      class="depth-link"
+    >
       <span class="label success">{{ item.depth }}</span> &nbsp;
     </a>
   </div>

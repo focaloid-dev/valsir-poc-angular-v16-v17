@@ -3,21 +3,27 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ColorComponent } from './components/color/color.component';
 import { DepthComponent } from './components/depth/depth.component';
+import { PlateComponent } from './components/plate/plate.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ColorComponent,
+    component: PlateComponent,
     title: 'Home page'
   },
   {
-    path: ':color',
-    component: DepthComponent,
-    title: 'Depth',
+    path: ':plate',
+    component: ColorComponent,
+    title: 'Color page'
   },
   {
-    path: ':color/:depth',
+    path: ':plate/:color',
+    component: DepthComponent,
+    title: 'Depth Page',
+  },
+  {
+    path: ':plate/:color/:depth',
     component: ProductSpecificationComponent,
   },
 

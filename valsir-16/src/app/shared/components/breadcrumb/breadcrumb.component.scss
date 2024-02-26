@@ -1,0 +1,49 @@
+/* breadcrumb.component.css */
+
+/* Breadcrumb container */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Breadcrumb item */
+.breadcrumb-item {
+  margin-right: 10px; /* Adjust spacing between breadcrumb items */
+  font-size: 16px; /* Adjust font size */
+}
+
+/* Breadcrumb link */
+.breadcrumb-item a {
+  text-decoration: none;
+  color: #007bff; /* Link color */
+  font-weight: bold; /* Make the links bold */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Breadcrumb link hover effect */
+.breadcrumb-item a:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+/* Breadcrumb icon */
+.breadcrumb-icon {
+  width: 20px; /* Icon size */
+  height: 20px; /* Icon size */
+  margin-right: 5px; /* Adjust spacing between icon and text */
+  border-radius: 50%; /* Make the icon circular */
+  overflow: hidden; /* Hide overflow if the image is larger */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 767px) {
+  .breadcrumb {
+    flex-direction: column; /* Display breadcrumb items vertically on small screens */
+  }
+
+  .breadcrumb-item {
+    margin-bottom: 5px; /* Adjust spacing between breadcrumb items on small screens */
+  }
+}

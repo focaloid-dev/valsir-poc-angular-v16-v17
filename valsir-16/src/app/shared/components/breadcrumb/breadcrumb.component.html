@@ -1,0 +1,27 @@
+<!-- breadcrumb.component.html -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li *ngFor="let item of items; let last = last" class="breadcrumb-item">
+      <a *ngIf="!last" [routerLink]="item.link">
+        <ng-container *ngIf="item.image">
+          <img
+            [src]="item.image"
+            alt="breadcrumb-icon"
+            class="breadcrumb-icon"
+          />
+        </ng-container>
+        <span *ngIf="item.text">{{ item.text }}</span>
+      </a>
+      <span *ngIf="last">
+        <ng-container *ngIf="item.image">
+          <img
+            [src]="item.image"
+            alt="breadcrumb-icon"
+            class="breadcrumb-icon"
+          />
+        </ng-container>
+        <span *ngIf="item.text">{{ item.text }}</span>
+      </span>
+    </li> /
+  </ol>
+</nav>

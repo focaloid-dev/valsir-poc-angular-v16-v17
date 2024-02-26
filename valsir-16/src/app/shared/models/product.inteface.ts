@@ -1,6 +1,7 @@
 export interface Product {
   id: number;
   product_name: string;
+  plate_name: string;
   color: string;
   image_url: string;
   unit: string;

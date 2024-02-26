@@ -14,6 +14,8 @@ import { DepthComponent } from './components/depth/depth.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { SecondaryNavBarComponent } from './layout/secondary-nav-bar/secondary-nav-bar.component';
+import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
+import { PlateComponent } from './components/plate/plate.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -28,7 +30,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProductSpecificationComponent,
     NavBarComponent,
     FooterComponent,
-    SecondaryNavBarComponent
+    SecondaryNavBarComponent,
+    BreadcrumbComponent,
+    PlateComponent
   ],
   imports: [
     BrowserModule,
