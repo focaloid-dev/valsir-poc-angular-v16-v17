@@ -9,6 +9,8 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 -10px; /* Add negative margin to counteract padding on child elements */
+  cursor: pointer;
+
 }
 
 .depth-link {

@@ -1,9 +1,13 @@
-<div class="row">
-  <div *ngFor="let item of plates" class="column">
-    <a (click)="navigateTo('/', item.plate_name)" class="card-link">
-      <div class="card">
-        <h3>{{ item.plate_name }}</h3>
-      </div>
-    </a>
+
+<div class="product-list">
+  <div
+    *ngFor="let item of plates"
+    (click)="navigateTo('/', item.plate_name)"
+    class="product"
+  >
+    <img src="https://via.placeholder.com/150" alt="Product 1" />
+    <h3>{{ item.plate_name }}</h3>
+    <p>Description of Plate</p>
   </div>
+  <!-- Add more product items here -->
 </div>
