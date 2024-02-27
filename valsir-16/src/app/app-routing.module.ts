@@ -25,6 +25,8 @@ const routes: Routes = [
   {
     path: ':plate/:color/:depth',
     component: ProductSpecificationComponent,
+    title: 'Product Details',
+
   },
 
 ];
