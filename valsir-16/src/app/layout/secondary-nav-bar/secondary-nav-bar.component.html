@@ -7,6 +7,7 @@
         <option value="formContainer">Form Container</option>
         <option value="counterPlate">Counter Plate</option>
         <option value="uShapedCopperTube">U-Shaped Copper Tube</option>
+        <option value="noNuShapedCopperTube">Non U-Shaped Copper Tube</option>
       </select>
 
       <label for="size-filter" *ngIf="selectedType === 'counterPlate'"
@@ -21,18 +22,29 @@
         <option value="angel">Non Angel</option>
       </select>
 
-      <label for="size-filter" *ngIf="selectedType === 'counterPlate'"
-      >Size:</label
-    >
-    <select
-      id="size-filter"
-      *ngIf="selectedType === 'formContainer'"
-      [(ngModel)]="selectedSize"
-    >
-      <option value="">Rectangular</option>
-      <option value="angel">Triangular</option>
+      <label for="size-filter" *ngIf="selectedType === 'formContainer'"
+        >Size:</label
+      >
+      <select
+        id="size-filter"
+        *ngIf="selectedType === 'formContainer'"
+        [(ngModel)]="selectedSize"
+      >
+        <option value="">Rectangular</option>
+        <option value="angel">Triangular</option>
+      </select>
 
-    </select>
+      <label for="size-filter" *ngIf="selectedType === 'uShapedCopperTube'"
+        >Size:</label
+      >
+      <select
+        id="size-filter"
+        *ngIf="selectedType === 'uShapedCopperTube'"
+        [(ngModel)]="selectedSize"
+      >
+        <option value=""><Caption>Central Faucet</Caption></option>
+        <option value="angel">Non Central Faucet</option>
+      </select>
 
       <button class="reset-btn">Reset</button>
     </div>
