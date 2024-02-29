@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/internal/operators/distinctUntilChanged';
 import { MainService } from '../../core/services/main.service';
+import { Product } from 'src/app/shared/models/product.interface';
 
 @Component({
   selector: 'app-product-specification',
@@ -10,7 +11,7 @@ import { MainService } from '../../core/services/main.service';
   styleUrls: ['./product-specification.component.scss']
 })
 export class ProductSpecificationComponent {
-  items: any[] = [];
+  items: Product[] = [];
   constructor(
     private route: ActivatedRoute,
     private mainService: MainService
@@ -30,9 +31,8 @@ export class ProductSpecificationComponent {
   }
   loadProducts(color: string, depth: number) {
     this.mainService.getAllProducts().subscribe({
-      next: (products: any[]) => {
-        this.items = this.mainService.filterByKeysAndValues(products, { color, depth })
-        console.log("🚀 ~ depths ~ depths ~ p:", this.items)
+      next: (products: Product[]) => {
+        this.items = this.mainService.filterProductByKeysAndValues(products, { color, depth })
       },
       error: (error) => {
         console.log("error occurred", error)
@@ -40,8 +40,4 @@ export class ProductSpecificationComponent {
     })
   }
 
-  handleCheckboxValues(e: any) {
-    console.log("🚀 ~ ProductSpecificationComponent ~ handleCheckboxValues ~ e:", e)
-
-  }
 }

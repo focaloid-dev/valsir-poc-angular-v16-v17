@@ -4,6 +4,7 @@ import { map, distinctUntilChanged } from 'rxjs';
 import { MainService } from '../../core/services/main.service';
 import { BreadcrumbItem } from 'src/app/shared/models/bread-crumb.model';
 import { BreadcrumbService } from 'src/app/shared/services/breadcrumb.service';
+import { Product } from 'src/app/shared/models/product.interface';
 
 @Component({
   selector: 'app-depth',
@@ -11,7 +12,7 @@ import { BreadcrumbService } from 'src/app/shared/services/breadcrumb.service';
   styleUrls: ['./depth.component.scss']
 })
 export class DepthComponent {
-  depthItems: any[] = [];
+  items: Product[] = [];
   constructor(
     private route: ActivatedRoute,
     private mainService: MainService,
@@ -27,11 +28,9 @@ export class DepthComponent {
   }
   loadDepths(color: string) {
     this.mainService.getDepthByColor().subscribe({
-      next: (products: any[]) => {
-        const allDepthItems = this.mainService.filterObjectsByKey(products, 'depth');
-        const depthWithQueryColor = allDepthItems.filter((depth) => depth.color === color)
-        this.depthItems = this.mainService.filterObjectsByKeyAndDistinct(depthWithQueryColor, 'depth')
-        console.log("🚀 ~ depths ~ depths ~ depths:", allDepthItems)
+      next: (products: Product[]) => {
+        const depthWithQueryColor = products.filter((depth) => depth.color === color)
+        this.items = this.mainService.filterProductsByUniqueKey(depthWithQueryColor, 'depth')
       },
       error: (error) => {
         console.log("error occurred", error)

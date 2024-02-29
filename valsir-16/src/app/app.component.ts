@@ -8,7 +8,7 @@ import { Subscription, distinctUntilChanged, filter, map } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnDestroy {
-  title = 'Valsir-16';
+  title = 'VALSIR-16';
   lang: string = '';
   private routerSubscription: Subscription;
   private routeParamsSubscription: Subscription | undefined;
@@ -16,7 +16,6 @@ export class AppComponent implements OnDestroy {
   constructor(
     private translateService: TranslateService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
   ) {
 
     this.translateService.setDefaultLang('en');
@@ -29,12 +28,6 @@ export class AppComponent implements OnDestroy {
         this.onRouteChange(event.url);
       }
     });
-  }
-
-  ngOnInit(): void {
-  }
-
-  ngAfterViewInit(): void {
   }
 
   onRouteChange(url: string): void {

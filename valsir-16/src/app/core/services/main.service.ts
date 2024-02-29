@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Product } from '../../shared/models/product.inteface';
+import { Product } from '../../shared/models/product.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -26,11 +26,19 @@ export class MainService {
     return this.getAllProducts()
   }
 
-  filterObjectsByKeyAndDistinct(array: any[], key: string) {
+
+  /**
+ * Filters an array of products by a specified key, ensuring unique values.
+ *
+ * @param {Product[]} array The array of products to filter.
+ * @param {keyof Product} key The key used to filter the products.
+ * @return {Product[]} Returns a new array containing products with unique values for the specified key.
+ */
+  filterProductsByUniqueKey<T extends keyof Product>(array: Product[], key: T): Product[] {
     const uniqueValues = new Set();
-    return array.filter(obj => {
-      if (key in obj) {
-        const value = obj[key];
+    return array.filter(product => {
+      if (key in product) {
+        const value = product[key];
         if (!uniqueValues.has(value)) {
           uniqueValues.add(value);
           return true;
@@ -40,11 +48,14 @@ export class MainService {
     });
   }
 
-  filterObjectsByKey(array: Product[], key: string) {
-    return array.filter(obj => key in obj);
-  }
-
-  filterByKeysAndValues<Product>(array: Product[], filterObj: Partial<Product>): Product[] {
+  /**
+  * Filters an array of objects based on key-value pairs in a filter object.
+  *
+  * @param {Product[]} array The array of objects to filter.
+  * @param {Partial<Product>} filterObj The filter object containing key-value pairs.
+  * @return {Product[]} Returns a new array containing only objects that match all key-value pairs in the filter object.
+  */
+  filterProductByKeysAndValues<Product>(array: Product[], filterObj: Partial<Product>): Product[] {
     return array.filter(item =>
       Object.entries(filterObj).every(([key, value]) => item[key as keyof Product] === value)
     );

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MainService } from 'src/app/core/services/main.service';
 import { BreadcrumbItem } from 'src/app/shared/models/bread-crumb.model';
+import { Product } from 'src/app/shared/models/product.interface';
 import { BreadcrumbService } from 'src/app/shared/services/breadcrumb.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { BreadcrumbService } from 'src/app/shared/services/breadcrumb.service';
   styleUrls: ['./plate.component.scss']
 })
 export class PlateComponent {
-  plates: any[] = [];
+  items: Product[] = [];
   constructor(
     private route: ActivatedRoute,
     private mainService: MainService,
@@ -24,9 +25,8 @@ export class PlateComponent {
 
   loadColors() {
     this.mainService.getAllProducts().subscribe({
-      next: (products: any[]) => {
-        this.plates = this.mainService.filterObjectsByKeyAndDistinct(products, 'plate_name')
-        console.log("🚀 ~ AppComponent ~ getAllProducts ~ getAllProducts:", this.plates)
+      next: (products: Product[]) => {
+        this.items = this.mainService.filterProductsByUniqueKey(products, 'plate_name')
       },
       error: (error) => {
         console.log("error occurred", error)

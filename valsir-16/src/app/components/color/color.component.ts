@@ -4,6 +4,7 @@ import { BreadcrumbService } from 'src/app/shared/services/breadcrumb.service';
 import { BreadcrumbItem } from 'src/app/shared/models/bread-crumb.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { distinctUntilChanged, map } from 'rxjs';
+import { Product } from 'src/app/shared/models/product.interface';
 
 @Component({
   selector: 'app-color',
@@ -11,7 +12,7 @@ import { distinctUntilChanged, map } from 'rxjs';
   styleUrls: ['./color.component.scss']
 })
 export class ColorComponent {
-  colorItems: any[] = [];
+  items: Product[] = [];
   constructor(
     private mainService: MainService,
     private breadcrumbService: BreadcrumbService,
@@ -29,11 +30,9 @@ export class ColorComponent {
 
   loadColors(plate: string) {
     this.mainService.getAllProducts().subscribe({
-      next: (products: any[]) => {
-        const allPlateItems = this.mainService.filterObjectsByKey(products, 'plate_name');
-        const colorsWithQueryPlate = allPlateItems.filter((plates) => plates.plate_name === plate)
-        this.colorItems = this.mainService.filterObjectsByKeyAndDistinct(colorsWithQueryPlate, 'color')
-        console.log("🚀 ~ AppComponent ~ getAllProducts ~ getAllProducts:", this.colorItems)
+      next: (products: Product[]) => {
+        const colorsWithQueryPlate = products.filter((plates) => plates.plate_name === plate)
+        this.items = this.mainService.filterProductsByUniqueKey(colorsWithQueryPlate, 'color')
       },
       error: (error) => {
         console.log("error occurred", error)
