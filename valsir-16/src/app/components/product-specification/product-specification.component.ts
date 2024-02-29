@@ -29,6 +29,7 @@ export class ProductSpecificationComponent {
       this.loadProducts(color, Number(depth));
     });
   }
+
   loadProducts(color: string, depth: number) {
     this.mainService.getAllProducts().subscribe({
       next: (products: Product[]) => {
