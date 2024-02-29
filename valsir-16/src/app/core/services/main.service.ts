@@ -11,22 +11,6 @@ export class MainService {
     return this.http.get<Product[]>('../assets/db/index.json')
   }
 
-  getDepthByColor() {
-    return this.getAllProducts()
-  }
-  getCounterPlates() {
-    return this.getAllProducts()
-  }
-
-  getFormContainers() {
-    return this.getAllProducts()
-  }
-
-  getUShapedCoppers() {
-    return this.getAllProducts()
-  }
-
-
   /**
  * Filters an array of products by a specified key, ensuring unique values.
  *

@@ -27,7 +27,7 @@ export class DepthComponent {
     ).subscribe(color => this.loadDepths(color));
   }
   loadDepths(color: string) {
-    this.mainService.getDepthByColor().subscribe({
+    this.mainService.getAllProducts().subscribe({
       next: (products: Product[]) => {
         const depthWithQueryColor = products.filter((depth) => depth.color === color)
         this.items = this.mainService.filterProductsByUniqueKey(depthWithQueryColor, 'depth')
