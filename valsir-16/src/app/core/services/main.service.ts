@@ -1,14 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../../shared/models/product.interface';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 
 export class MainService {
   constructor(private http: HttpClient) { }
-  getAllProducts() {
-    return this.http.get<Product[]>('../assets/db/index.json')
+
+  /**
+   * Retrieves all products from the database.
+   *
+   * @returns {Observable<Product[]>} An Observable that emits an array of Product objects retrieved from the local database.
+   */
+  getAllProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>('../assets/db/index.json');
   }
 
   /**
